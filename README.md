@@ -3,7 +3,7 @@
 Este projeto implementa um **pipeline de dados Serverless** na AWS para automatizar a extração, o processamento e a catalogação de dados históricos de investimentos diretamente do portal da B3.
 
 ## 🚀 Visão Geral
-[cite_start]O objetivo principal é transformar relatórios consolidados mensais (formato Excel) em um **Data Lake particionado** e consultável via SQL[cite: 9]. Isso permite a realização de análises históricas de custódia, dividendos e negociações com custo operacional próximo de zero.
+O objetivo principal é transformar relatórios consolidados mensais (formato Excel) em um **Data Lake particionado** e consultável via SQL. Isso permite a realização de análises históricas de custódia, dividendos e negociações com custo operacional próximo de zero.
 
 ### Principais Tecnologias
 * **Linguagem:** Python (Pandas, Awswrangler)
@@ -18,9 +18,12 @@ Este projeto implementa um **pipeline de dados Serverless** na AWS para automati
 
 1. **Ingestão (Raw):** O extrator RPA realiza o download dos arquivos `.xlsx` da B3 e efetua o upload para o bucket S3 na pasta `raw/`.
 2. **Processamento (Lambda):** O upload aciona automaticamente uma função **AWS Lambda**.
-3. [cite_start]**Transformação:** A Lambda utiliza a biblioteca `awswrangler` para limpar dados e padronizar colunas para o formato `snake_case`[cite: 10].
+3. **Transformação:** A Lambda utiliza a biblioteca `awswrangler` para limpar dados e padronizar colunas para o formato `snake_case`.
 4. **Armazenamento (Trusted):** Os dados são convertidos para o formato **Parquet** e salvos de forma particionada por `year` e `month`.
-5. [cite_start]**Consumo:** O **AWS Glue** cataloga as partições, permitindo consultas via **AWS Athena**[cite: 6].
+5. **Consumo:** O **AWS Glue** cataloga as partições, permitindo consultas via **AWS Athena**.
+
+## 🏗️ Arquitetura do Pipeline
+![Diagrama de Arquitetura](./img/aws_pipeline.png)
 
 ---
 
