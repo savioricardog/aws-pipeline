@@ -1,0 +1,53 @@
+# --- Segredos e Configurações (O mais importante!) ---
+.env
+.env.local
+*.secret
+credentials.json
+
+# --- Python & Ambientes Virtuais ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+bin/
+build/
+dist/
+*.egg-info/
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# --- Data Science & Bancos de Dados ---
+# Evita subir arquivos de dados pesados (CSV, Parquet, Pickle)
+*.csv
+*.xlsx
+*.parquet
+*.pickle
+*.pkl
+*.sqlite3
+*.db
+*.zip
+
+# --- Qlik & BI (Se você salvar arquivos de suporte no repo) ---
+*.qvd
+*.qvf
+*.log
+*.tmp
+*.json
+*.png
+
+# --- Sistema Operacional ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDEs (VS Code / PyCharm) ---
+.vscode/
+.idea/
+
+# --- Arquivos ---
+lambda.py
