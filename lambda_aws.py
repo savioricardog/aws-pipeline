@@ -1,8 +1,7 @@
 import json
 import unicodedata
 import warnings
-
-import awswrangler as wr
+import awswrangler as wr # já roda nativamente com ajuste da versão python na AWS
 import pandas as pd
 
 # Suprime warnings para manter output limpo
@@ -187,7 +186,7 @@ def _extrair_ano_mes(caminho_arquivo: str) -> tuple[str, str]:
         ('2025', '03')
     """
     # TODO: adaptar para caminhos S3
-    nome_arquivo = caminho_arquivo.split("/")[-1][:-5]
+    nome_arquivo = caminho_arquivo.split("/")[-1][:-5] # adaptado para o caminho do S3
 
     partes = nome_arquivo.split("-")
 
@@ -289,7 +288,7 @@ def _salvar_como_parquet_s3(
         ✓ Salvo: s3://bucket-name/trusted/posicao-fundos/year=2025/month=12/data.parquet
     """
     # TODO: colocar o nome do bucket da camada trusted aqui
-    bucket = "project-trusted-b3"
+    bucket = "layer-trusted-test" # bucket pessoal no S3
 
     aba_padronizada = _padronizar_nome_aba(aba_nome)
 
@@ -353,7 +352,7 @@ def processar_relatorio(caminho_arquivo: str) -> None:
         # Imprime linha vazia (organização visual)
         print()
 
-
+# __main__ para rodar o script
 def lambda_handler(event, context):
     bucket_name = event["Records"][0]["s3"]["bucket"]["name"]
     key = event["Records"][0]["s3"]["object"]["key"]

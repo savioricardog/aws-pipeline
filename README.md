@@ -53,3 +53,14 @@ Savio Ricardo Garcia
 
 ### LinkedIn: https://www.linkedin.com/in/savioricardogarcia
 ### GitHub: https://github.com/savioricardog/aws-pipeline
+
+---
+
+## 📚 Créditos e Referências
+
+Este projeto foi desenvolvido como parte de um estudo prático e aprofundamento técnico, utilizando como base as metodologias e ensinamentos de:
+
+* **Henrique Branco:** Pela estrutura lógica do pipeline de dados e conceitos de engenharia na AWS.
+* **Documentação AWS:** Referência para configuração de Roles e gatilhos Lambda.
+
+O código contido neste repositório foi adaptado, documentado e implementado por mim para fins de consolidação de aprendizado em MLOps e Engenharia de Dados.
