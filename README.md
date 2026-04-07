@@ -33,9 +33,10 @@ s3://project-trusted-b3/
 │   └── year=2025/
 │       └── month=11/
 │           └── data.parquet
+```
 
 
-📊 Exemplo de Consulta (Athena)
+## 📊 Exemplo de Consulta (Athena)
 SQL
 SELECT 
     nome_ativo, 
@@ -46,5 +47,5 @@ GROUP BY nome_ativo;
 ## 📝 Autor
 Savio Ricardo Garcia
 
-LinkedIn: https://www.linkedin.com/in/savioricardogarcia
-GitHub: https://github.com/savioricardog/aws-pipeline
+### LinkedIn: https://www.linkedin.com/in/savioricardogarcia
+### GitHub: https://github.com/savioricardog/aws-pipeline
