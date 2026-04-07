@@ -28,11 +28,12 @@ Este projeto implementa um **pipeline de dados Serverless** na AWS para automati
 Os dados seguem o padrão de particionamento do **Hive**, otimizando a performance e reduzindo custos:
 
 ```plaintext
-s3://project-trusted-b3/
-├── posicao-etf/
-│   └── year=2025/
-│       └── month=11/
-│           └── data.parquet
+| s3://layer-raw/
+| └── s3://layer-trusted/
+├──    └── posicao-etf/
+│          └── year=2025/
+│              └── month=11/
+│                  └── data.parquet
 ```
 
 
@@ -41,7 +42,7 @@ SQL
 SELECT 
     nome_ativo, 
     SUM(quantidade) as total_cotas
-FROM "trusted_db"."posicao_etf"
+FROM "layer-trusted"."posicao_etf"
 GROUP BY nome_ativo;
 
 ## 📝 Autor

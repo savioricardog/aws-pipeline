@@ -38,7 +38,7 @@ dist/
 *.log
 *.tmp
 *.json
-*.png
+# *.png
 
 # --- Sistema Operacional ---
 .DS_Store
